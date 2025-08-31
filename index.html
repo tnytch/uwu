@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>uwu</title>
+        <link rel="icon" href="favicon.ico" />
+
+        <script src="owo.js"></script>
+
+        <style>
+            :root {
+                --dark-pink: #5C1D36;
+                --light-pink: #FED7E8;
+            }
+            ::selection {
+                background-color: var(--dark-pink);
+                color: var(--light-pink);
+            }
+            input:focus {
+                outline: 2px solid var(--dark-pink);
+                border-radius: 10px;
+            }
+            input[type="checkbox"] {
+                accent-color: var(--dark-pink);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header style="text-align: center;">
+            <h1 style="margin-bottom: 0;">uwu<small style="font-size: 0.5em;">.js</small></h1>
+            <strong><em>update wherever used</em></strong>
+            <br /><small>the unbelievably small <em>(45 LOC, 883 bytes raw, 472 bytes gzipped)</em> reactive library</small>
+        </header>
+
+        <hr />
+        
+        <main>
+            <button onclick="number_name++">modify</button>
+            [ <uwu id="number_name">1</uwu> | <small _uwu="number_name"></small> ] >> <input type="number" _uwu="number_name" />
+            <br />
+            <button onclick="string_name = string_name.split('').reverse().join('')">modify</button>
+            [ <uwu id="string_name">some text</uwu> | <em _uwu="string_name"></em> ] >> <input type="text" _uwu="string_name" />
+            <br />
+            <button onclick="boolean_name = !boolean_name">modify</button>
+            [ <uwu id="boolean_name">true</uwu> | <strong _uwu="boolean_name"></strong> ] >> <input type="checkbox" _uwu="boolean_name" />
+        
+            <hr />
+
+            <p>
+                <strong>uwu.js is an small little reactive-dom library</strong>
+                <br />
+                it enables you to write reactive variables right in your .html page like this:
+                <br />
+                <code>&lt;uwu id="var_name">0&lt;/uwu></code>
+                <br />
+                reference them on any other tag like this:
+                <br />
+                <code>&lt;p _uwu="var_name">&lt;/p></code>
+                <br />
+                and then modify them anywhere in your .js code like this:
+                <br />
+                <code>var_name++;</code>
+                <br />
+                <strong>That's it.</strong>
+                <br />
+                <em>No JSX. No <code>state()</code> setup. No frameworks. No virtual-DOM.</em>
+                <br />
+                uwu.js works how you think it would by default.
+            </p>
+
+            <hr />
+
+            <h2>What uwu do:</h2>
+            <ol>
+                <li>define reactive variables straight in the DOM with the <code>&lt;uwu></code> tag</li>
+                <li>reference reactive variables on <strong>any</strong> HTML tag with the <code>_uwu</code> attribute</li>
+                <li>
+                    bind reactive variables to <code>&lt;input></code> tags, currently supporting:
+                    <ul>
+                        <li>text</li>
+                        <li>numbers</li>
+                        <li>checkboxes</li>
+                    </ul>
+                </li>
+            </ol>
+        </main>
+
+        <hr />
+
+        <footer>
+            
+        </footer>
+    </body>
+</html>
