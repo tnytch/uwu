@@ -1,18 +1,13 @@
 window.onload = () => { uwu.do("q"); };
 const uwu = {
     v: new Map(),
-    to(q, t) {
-        let qu = [...document.querySelectorAll(q)];
-        qu.forEach(th => {
-            this.v.set(th.getAttribute(`_${t}`), {"t": t, "v": th.textContent, "a": [th]});
-            this.be(th.getAttribute(`_${t}`));
-        });
-    },
     do(wat) {
         if (wat == "q") { // query
-            this.to("uwu[_num]", "num");
-            this.to("uwu[_str]", "str");
-            this.to("uwu[_boo]", "boo");
+            let q = [...document.querySelectorAll("uwu")];
+            q.forEach(i => {
+                this.v.set(i.id, {"v": i.textContent, "a": [i]});
+                this.be(i.id);
+            });
             let refs = [...document.querySelectorAll("[_uwu]")];
             refs.forEach(ref => {
                 let r = ref.getAttribute("_uwu");

@@ -7,8 +7,9 @@
         <title>uwu</title>
         <link rel="icon" href="favicon.ico" />
 
-        <script src="owo.js"></script>
+        <script src="uwu.min.js"></script>
 
+        <link rel="stylesheet" href="shj/dark.css" />
         <style>
             :root {
                 --dark-pink: #5C1D36;
@@ -18,12 +19,60 @@
                 background-color: var(--dark-pink);
                 color: var(--light-pink);
             }
+            hr {
+                border-color: var(--light-pink);
+            }
+            button {
+                background-color: var(--dark-pink);
+                color: var(--light-pink);
+                border: none;
+                padding: 5px;
+                margin: 5px;
+                cursor: pointer;
+            }
+            a, a:visited {
+                color: var(--dark-pink);
+            }
+            a:hover {
+                background-color: var(--dark-pink);
+                color: var(--light-pink);
+            }
+            input {
+                border-radius: 0;
+                padding: 2px;
+            }
             input:focus {
                 outline: 2px solid var(--dark-pink);
-                border-radius: 10px;
+                /* border-radius: 10px; */
             }
-            input[type="checkbox"] {
+            input[type="number"], input[type="checkbox"] {
                 accent-color: var(--dark-pink);
+            }
+            details summary {
+                list-style: none;
+            }
+            details summary::before {
+                content: "[ ↳ ] ";
+                font-weight: bold;
+            }
+            details[open] summary::before {
+                content: "[ ↱ ] ";
+                font-weight: bold;
+            }
+            footer {
+                background-color: var(--dark-pink);
+                color: var(--light-pink);
+                text-align: center;
+            }
+            footer a, footer a:visited {
+                color: var(--light-pink);
+            }
+            .shj-lang-html {
+                font-size: 12px;
+                border-radius: 0;
+                padding: 5px 0;
+                background-color: #270c17;
+                color: #faa3c9;
             }
         </style>
     </head>
@@ -32,7 +81,7 @@
         <header style="text-align: center;">
             <h1 style="margin-bottom: 0;">uwu<small style="font-size: 0.5em;">.js</small></h1>
             <strong><em>update wherever used</em></strong>
-            <br /><small>the unbelievably small <em>(45 LOC, 883 bytes raw, 472 bytes gzipped)</em> reactive library</small>
+            <br /><small>a super small <em>(45 LOC, <a href="uwu.js">883 bytes raw</a>, 472 bytes gzipped)</em> reactive library</small>
         </header>
 
         <hr />
@@ -47,6 +96,24 @@
             <button onclick="boolean_name = !boolean_name">modify</button>
             [ <uwu id="boolean_name">true</uwu> | <strong _uwu="boolean_name"></strong> ] >> <input type="checkbox" _uwu="boolean_name" />
         
+            <hr />
+
+            <details open>
+                <summary>view actual code of above section:</summary>
+                <div class="shj-lang-html">&lt;button onclick="number_name++">modify&lt;/button>
+[ &lt;uwu id="number_name">1&lt;/uwu> | &lt;small _uwu="number_name">&lt;/small> ] >> &lt;input type="number" _uwu="number_name" />
+&lt;br />
+&lt;button onclick="string_name = string_name.split('').reverse().join('')">modify&lt;/button>
+[ &lt;uwu id="string_name">some text&lt;/uwu> | &lt;em _uwu="string_name">&lt;/em> ] >> &lt;input type="text" _uwu="string_name" />
+&lt;br />
+&lt;button onclick="boolean_name = !boolean_name">modify&lt;/button>
+[ &lt;uwu id="boolean_name">true&lt;/uwu> | &lt;strong _uwu="boolean_name">&lt;/strong> ] >> &lt;input type="checkbox" _uwu="boolean_name" /></div>
+            </details>
+            <script type="module">
+                import { highlightAll } from './shj/index.js';
+                highlightAll();
+            </script>
+
             <hr />
 
             <p>
@@ -86,12 +153,36 @@
                     </ul>
                 </li>
             </ol>
+
+            <hr />
+
+            <h2>What uwu don't do:</h2>
+            <ul>
+                <li>care about variable types</li>
+                <li>support custom components/nesting</li>
+                <li>run auto-updating js-code in the DOM</li>
+                <li>support persistent variable data</li>
+            </ul>
+            <p>
+                If you want those things, while still keeping your dependencies small, checkout <a href="https://domdog.vercel.app">DOMDOG</a>. Written by the same folks, but with a few more fun things included.
+            </p>
+
+            <hr />
+
+            <h2>Should i?</h2>
+            <p>
+                If you are building a super simple website, and you just want specific DOM parts to automatically update when specific variables change in value, <a href="https://github.com/tnytch/uwu">then uwu is 4 u</a>.
+                <br /><br />
+                If you are building a slighter more complex website/webapp, you may want to look at <a href="https://domdog.vercel.app">DOMDOG</a>.
+                <br /><br />
+                If you are building a large app, with lots of moving parts, or maybe working with a big team that has unique needs, perhaps something like <a href="https://vuejs.org/">Vue</a> or the wonderful <a href="https://svelte.dev/">SvelteKit</a> is more your style.
+            </p>
         </main>
 
         <hr />
 
         <footer>
-            
+            <strong><em>made by <a href="https://github.com/tnytch"><small>tnytch</small></a></em></strong>
         </footer>
     </body>
 </html>
